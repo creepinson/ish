@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-               BuildableName = "iSH.app"
+               BuildableName = "iSH-test.app"
                BlueprintName = "iSH"
                ReferencedContainer = "container:iSH.xcodeproj">
             </BuildableReference>
@@ -27,19 +27,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-            BuildableName = "iSH.app"
+            BuildableName = "iSH-test.app"
             BlueprintName = "iSH"
             ReferencedContainer = "container:iSH.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -56,13 +54,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-            BuildableName = "iSH.app"
+            BuildableName = "iSH-test.app"
             BlueprintName = "iSH"
             ReferencedContainer = "container:iSH.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-            BuildableName = "iSH.app"
+            BuildableName = "iSH-test.app"
             BlueprintName = "iSH"
             ReferencedContainer = "container:iSH.xcodeproj">
          </BuildableReference>
