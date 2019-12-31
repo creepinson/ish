@@ -4,7 +4,6 @@
 //
 //  Created by Theo Paris on 12/29/19.
 //
-#import <AudioUnit/AudioUnit.h>
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #include "kernel/fs.h"
@@ -12,7 +11,9 @@
 #include "util/sync.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <AudioUnit/AudioUnit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "TGSineWaveToneGenerator.h"
+
 @interface ToneGenerator : NSObject
 {
     @public AudioComponentInstance toneUnit;

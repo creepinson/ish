@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-               BuildableName = "iSH-test.app"
-               BlueprintName = "iSH"
+               BuildableName = " .app"
+               BlueprintName = " "
                ReferencedContainer = "container:iSH.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,8 +31,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-            BuildableName = "iSH-test.app"
-            BlueprintName = "iSH"
+            BuildableName = " .app"
+            BlueprintName = " "
             ReferencedContainer = "container:iSH.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,8 +54,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-            BuildableName = "iSH-test.app"
-            BlueprintName = "iSH"
+            BuildableName = " .app"
+            BlueprintName = " "
             ReferencedContainer = "container:iSH.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,8 +71,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB792B4F1F96D90D00FFB7A4"
-            BuildableName = "iSH-test.app"
-            BlueprintName = "iSH"
+            BuildableName = " .app"
+            BlueprintName = " "
             ReferencedContainer = "container:iSH.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

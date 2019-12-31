@@ -159,13 +159,6 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
     return size;
 }
 
-struct dev_ops audio_sine_dev = {
-    .open = audio_sine_open,
-    .fd.close = audio_sine_close,
-    .fd.read = audio_sine_read,
-    .fd.write = audio_sine_write
-};
-
 @implementation AudioPlayer + (AudioPlayer *)instance {
     static __weak AudioPlayer *tracker;
     if (tracker == nil) {
@@ -182,7 +175,13 @@ struct dev_ops audio_sine_dev = {
 }
 
 - (void) play {
-    
+
+    NSError *error = nil;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:&error];
+    self->player.volume = 1.0;
+    [self->player play]; //to play
+    NSLog(@"audio player state: %s", [self->player isPlaying] ? "true" : "false");
 }
 
 - (void)dealloc {
@@ -251,7 +250,6 @@ struct dev_ops audio_sine_dev = {
 }
 
 - (ssize_t)readFromBuffer:(void *)buf size:(size_t)size {
-    @synchronized (self) {
         int err = [self waitForUpdate];
         if (err < 0)
             return err;
@@ -259,10 +257,13 @@ struct dev_ops audio_sine_dev = {
         NSData *wave1= [NSMutableData dataWithData:buffer];
         NSMutableData *outData = generateAudioWithHeaders(wave1);
         NSError *error1;
-        self.audioPlayer->player = [[AVAudioPlayer alloc] initWithData:wave1 fileTypeHint:@"wav" error:&error1];
-        [self.audioPlayer->player play]; //to play
+        self.audioPlayer->player = [[AVAudioPlayer alloc] initWithData:outData fileTypeHint:@"wav" error:&error1];
+        if(error1) {
+            NSLog(@"audio error: %@", error1);
+        }
+        
+        [self.audioPlayer play];
         return size;
-    }
 }
 
 @end
@@ -290,6 +291,12 @@ static ssize_t audio_write(struct fd *fd, void *buf, size_t size) {
     return size;
 }
 
+struct dev_ops audio_sine_dev = {
+    .open = audio_sine_open,
+    .fd.close = audio_sine_close,
+    .fd.read = audio_sine_read,
+    .fd.write = audio_sine_write
+};
 
 struct dev_ops audio_dev = {
     .open = audio_open,

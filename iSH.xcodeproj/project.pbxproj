@@ -48,8 +48,8 @@
 		BBFB5579215876CD00DFE6DE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB5578215876CD00DFE6DE /* AboutViewController.m */; };
 		BBFB557C215878C600DFE6DE /* UIApplication+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB557B215878C600DFE6DE /* UIApplication+OpenURL.m */; };
 		BBFB558021587B6800DFE6DE /* ArrowBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB557F21587B6800DFE6DE /* ArrowBarButton.m */; };
-		EA69E17E23B97CD10000021B /* AudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EA69E17D23B97CD10000021B /* AudioDevice.m */; };
-		EA86F51223BB00BB00F1E53A /* TGSineWaveToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EA86F51123BB00BB00F1E53A /* TGSineWaveToneGenerator.m */; };
+		EAAF713D23BC12B300AA5B79 /* TGSineWaveToneGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF713A23BC12B300AA5B79 /* TGSineWaveToneGenerator.m */; };
+		EAAF713E23BC12B300AA5B79 /* AudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAF713B23BC12B300AA5B79 /* AudioDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,7 +167,7 @@
 		BB6DB260216435330047A611 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		BB78AB291FAD22440013E782 /* TerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalView.h; sourceTree = "<group>"; };
 		BB78AB2A1FAD22440013E782 /* TerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalView.m; sourceTree = "<group>"; };
-		BB792B501F96D90D00FFB7A4 /* iSH-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iSH-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB792B501F96D90D00FFB7A4 /*  iSH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = " iSH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB792B531F96D90D00FFB7A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BB792B541F96D90D00FFB7A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BB792B561F96D90D00FFB7A4 /* TerminalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalViewController.h; sourceTree = "<group>"; };
@@ -308,10 +308,10 @@
 		BBFB557B215878C600DFE6DE /* UIApplication+OpenURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+OpenURL.m"; sourceTree = "<group>"; };
 		BBFB557E21587B6800DFE6DE /* ArrowBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowBarButton.h; sourceTree = "<group>"; };
 		BBFB557F21587B6800DFE6DE /* ArrowBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowBarButton.m; sourceTree = "<group>"; };
-		EA69E17D23B97CD10000021B /* AudioDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioDevice.m; sourceTree = "<group>"; };
-		EA69E17F23B97CE20000021B /* AudioDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDevice.h; sourceTree = "<group>"; };
-		EA86F51023BB00BB00F1E53A /* TGSineWaveToneGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSineWaveToneGenerator.h; sourceTree = "<group>"; };
-		EA86F51123BB00BB00F1E53A /* TGSineWaveToneGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSineWaveToneGenerator.m; sourceTree = "<group>"; };
+		EAAF713923BC12B200AA5B79 /* TGSineWaveToneGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSineWaveToneGenerator.h; sourceTree = "<group>"; };
+		EAAF713A23BC12B300AA5B79 /* TGSineWaveToneGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSineWaveToneGenerator.m; sourceTree = "<group>"; };
+		EAAF713B23BC12B300AA5B79 /* AudioDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioDevice.m; sourceTree = "<group>"; };
+		EAAF713C23BC12B300AA5B79 /* AudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDevice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,14 +359,14 @@
 		BB235532235D472F00139E00 /* Devices */ = {
 			isa = PBXGroup;
 			children = (
-				EA86F51023BB00BB00F1E53A /* TGSineWaveToneGenerator.h */,
-				EA86F51123BB00BB00F1E53A /* TGSineWaveToneGenerator.m */,
+				EAAF713C23BC12B300AA5B79 /* AudioDevice.h */,
+				EAAF713B23BC12B300AA5B79 /* AudioDevice.m */,
+				EAAF713923BC12B200AA5B79 /* TGSineWaveToneGenerator.h */,
+				EAAF713A23BC12B300AA5B79 /* TGSineWaveToneGenerator.m */,
 				650B337222EA235C00B4C03E /* PasteboardDevice.h */,
 				650B337322EA235C00B4C03E /* PasteboardDevice.m */,
 				BB235535235D489400139E00 /* LocationDevice.h */,
 				BB235533235D488400139E00 /* LocationDevice.m */,
-				EA69E17D23B97CD10000021B /* AudioDevice.m */,
-				EA69E17F23B97CE20000021B /* AudioDevice.h */,
 			);
 			name = Devices;
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 		BB792B511F96D90D00FFB7A4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB792B501F96D90D00FFB7A4 /* iSH-test.app */,
+				BB792B501F96D90D00FFB7A4 /*  iSH.app */,
 				BBF124901FA7C3100088FB50 /* alpine */,
 				BB13F7DC200AD81D003D1C4D /* libish.a */,
 				BB88F4902154760800A341FD /* iSHFileProvider.appex */,
@@ -778,9 +778,9 @@
 			productReference = BB13F7DC200AD81D003D1C4D /* libish.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		BB792B4F1F96D90D00FFB7A4 /* iSH */ = {
+		BB792B4F1F96D90D00FFB7A4 /*   */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB792B661F96D90D00FFB7A4 /* Build configuration list for PBXNativeTarget "iSH" */;
+			buildConfigurationList = BB792B661F96D90D00FFB7A4 /* Build configuration list for PBXNativeTarget " " */;
 			buildPhases = (
 				BB792B4C1F96D90D00FFB7A4 /* Sources */,
 				BB792B4D1F96D90D00FFB7A4 /* Frameworks */,
@@ -796,9 +796,9 @@
 				BB13F7E7200AD874003D1C4D /* PBXTargetDependency */,
 				BB88F49E2154760800A341FD /* PBXTargetDependency */,
 			);
-			name = iSH;
+			name = " ";
 			productName = iSH;
-			productReference = BB792B501F96D90D00FFB7A4 /* iSH-test.app */;
+			productReference = BB792B501F96D90D00FFB7A4 /*  iSH.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BB88F48F2154760800A341FD /* iSHFileProvider */ = {
@@ -877,7 +877,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB792B4F1F96D90D00FFB7A4 /* iSH */,
+				BB792B4F1F96D90D00FFB7A4 /*   */,
 				BB88F48F2154760800A341FD /* iSHFileProvider */,
 				BB13F7CA200ACC31003D1C4D /* Meson */,
 				BB13F7D0200ACCA2003D1C4D /* Ninja */,
@@ -984,11 +984,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAF713E23BC12B300AA5B79 /* AudioDevice.m in Sources */,
 				9A28E4EA219A8B670073D200 /* AboutAppearanceViewController.m in Sources */,
 				BB1D9D93234A8FE100F364E8 /* AboutNavigationController.m in Sources */,
-				EA69E17E23B97CD10000021B /* AudioDevice.m in Sources */,
 				BB235534235D488500139E00 /* LocationDevice.m in Sources */,
 				BB792B581F96D90D00FFB7A4 /* TerminalViewController.m in Sources */,
+				EAAF713D23BC12B300AA5B79 /* TGSineWaveToneGenerator.m in Sources */,
 				BB78AB2B1FAD22440013E782 /* TerminalView.m in Sources */,
 				BB23F58D231E1D1400585522 /* ScrollbarView.m in Sources */,
 				BBFB557621586F9200DFE6DE /* DismissSegue.m in Sources */,
@@ -997,7 +998,6 @@
 				BB101B382364CF57000A93BC /* FontPickerViewController.m in Sources */,
 				BBCC9D962365430800424C83 /* SceneDelegate.m in Sources */,
 				BB82A7FD21B4C2E8006AA5FD /* AboutExternalKeyboardViewController.m in Sources */,
-				EA86F51223BB00BB00F1E53A /* TGSineWaveToneGenerator.m in Sources */,
 				8632A7BF219A59FB00F02325 /* UserPreferences.m in Sources */,
 				BB792B631F96D90D00FFB7A4 /* main.m in Sources */,
 				BB60F55221573FCA003A4E52 /* BarButton.m in Sources */,
@@ -1311,7 +1311,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_APP_GROUP_IDENTIFIER = "group.$(ROOT_BUNDLE_IDENTIFIER)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(ROOT_BUNDLE_IDENTIFIER)";
-				ROOT_BUNDLE_IDENTIFIER = app.ish.iSH;
+				ROOT_BUNDLE_IDENTIFIER = creepz.ish.iSH;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = arm64;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1355,7 +1355,7 @@
 				MESON_BUILD_DIR = "$(CONFIGURATION_BUILD_DIR)/meson";
 				PRODUCT_APP_GROUP_IDENTIFIER = "group.$(ROOT_BUNDLE_IDENTIFIER)";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(ROOT_BUNDLE_IDENTIFIER)";
-				ROOT_BUNDLE_IDENTIFIER = app.ish.iSH;
+				ROOT_BUNDLE_IDENTIFIER = creepz.ish.iSH;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = arm64;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1420,10 +1420,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = creepinson.ish.iSH;
-				PRODUCT_NAME = "iSH-test";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = " iSH";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				ROOT_BUNDLE_IDENTIFIER = app.ish.iSHTest;
+				ROOT_BUNDLE_IDENTIFIER = creepz.ish.iSH;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-ambiguous-macro";
@@ -1481,10 +1481,10 @@
 				INFOPLIST_FILE = app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = creepinson.ish.iSH;
-				PRODUCT_NAME = "iSH-test";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = " iSH";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				ROOT_BUNDLE_IDENTIFIER = app.ish.iSHTest;
+				ROOT_BUNDLE_IDENTIFIER = creepz.ish.iSH;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1528,9 +1528,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = creepinson.ish.iSH.FileProvider;
+				PRODUCT_BUNDLE_IDENTIFIER = creepz.ish.iSH.FileProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				ROOT_BUNDLE_IDENTIFIER = app.ish.iSHTest;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1567,9 +1566,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = creepinson.ish.iSH.FileProvider;
+				PRODUCT_BUNDLE_IDENTIFIER = creepz.ish.iSH.FileProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				ROOT_BUNDLE_IDENTIFIER = app.ish.iSHTest;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1615,7 +1613,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB792B661F96D90D00FFB7A4 /* Build configuration list for PBXNativeTarget "iSH" */ = {
+		BB792B661F96D90D00FFB7A4 /* Build configuration list for PBXNativeTarget " " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB792B641F96D90D00FFB7A4 /* Debug */,
