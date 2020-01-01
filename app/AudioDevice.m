@@ -181,7 +181,6 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
     [[AVAudioSession sharedInstance] setActive:YES error:&error];
     
     self->player.volume = 1.0;
-    [self->player pause]; //to play
     [self->player stop]; //to play
     [self->player play]; //to play
     NSLog(@"audio player state: %s", [self->player isPlaying] ? "true" : "false");
