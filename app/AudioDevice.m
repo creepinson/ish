@@ -179,7 +179,10 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
     NSError *error = nil;
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
     [[AVAudioSession sharedInstance] setActive:YES error:&error];
+    
     self->player.volume = 1.0;
+    [self->player pause]; //to play
+    [self->player stop]; //to play
     [self->player play]; //to play
     NSLog(@"audio player state: %s", [self->player isPlaying] ? "true" : "false");
 }
@@ -201,12 +204,12 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
 
 
 @interface AudioFile : NSObject {
-    NSData *buffer;
+    NSMutableData *buffer;
     size_t bufferOffset;
+    @public bool streamClosed;
 }
 
 @property AudioPlayer *audioPlayer;
-
 - (ssize_t)readIntoBuffer:(void *)buf size:(size_t)size;
 
 @end
@@ -216,7 +219,7 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
 - (instancetype)init {
     if (self = [super init]) {
         self.audioPlayer = [AudioPlayer instance];
-        
+        self->streamClosed = NO;
     }
     return self;
 }
@@ -249,20 +252,28 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
     }
 }
 
+- (void) onClose {
+    self->streamClosed = YES;
+    self.audioPlayer->playerData = [NSMutableData dataWithData:buffer];
+    self.audioPlayer->playerData = generateAudioWithHeaders(self.audioPlayer->playerData);
+    NSError *error1;
+    self.audioPlayer->player = [[AVAudioPlayer alloc] initWithData:self.audioPlayer->playerData fileTypeHint:@"wav" error:&error1];
+    if(error1) {
+        NSLog(@"audio error: %@", error1);
+    }
+    [self.audioPlayer play];
+}
+
 - (ssize_t)readFromBuffer:(void *)buf size:(size_t)size {
-        int err = [self waitForUpdate];
-        if (err < 0)
-            return err;
-        buffer = [NSData dataWithBytes:buf length:size];
-        NSData *wave1= [NSMutableData dataWithData:buffer];
-        NSMutableData *outData = generateAudioWithHeaders(wave1);
-        NSError *error1;
-        self.audioPlayer->player = [[AVAudioPlayer alloc] initWithData:outData fileTypeHint:@"wav" error:&error1];
-        if(error1) {
-            NSLog(@"audio error: %@", error1);
+    NSData *wave1;
+    //if(self->streamClosed == YES) { needed to make sure that the write stream is finished sending data
+        if(!buffer) {
+            buffer = [NSMutableData dataWithBytes:buf length:size];
+        } else {
+            [buffer appendData:[NSMutableData dataWithBytes:buf length:size]];
         }
         
-        [self.audioPlayer play];
+        
         return size;
 }
 
@@ -274,6 +285,8 @@ static int audio_open(int major, int minor, struct fd *fd) {
 }
 
 static int audio_close(struct fd *fd) {
+    AudioFile *file = (__bridge AudioFile *) fd->data;
+    [file onClose];
     CFBridgingRelease(fd->data);
     return 0;
 }
@@ -286,8 +299,6 @@ static ssize_t audio_read(struct fd *fd, void *buf, size_t size) {
 static ssize_t audio_write(struct fd *fd, void *buf, size_t size) {
     AudioFile *file = (__bridge AudioFile *) fd->data;
     [file readFromBuffer:buf size:size];
-    
-    
     return size;
 }
 

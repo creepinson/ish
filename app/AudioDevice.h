@@ -47,7 +47,7 @@ static NSMutableData* generateAudioWithHeaders(NSData* wave1) {
 
     unsigned long totalAudioLen=[wave1 length];
     unsigned long totalDataLen = totalAudioLen + 44;
-    unsigned long longSampleRate = 4*11025.0;
+    unsigned long longSampleRate = 22050;
     unsigned int channels = 1;
     unsigned long byteRate = (16 * longSampleRate * channels)/8;
 
