@@ -170,5 +170,5 @@ static ssize_t location_read(struct fd *fd, void *buf, size_t size) {
 const struct dev_ops location_dev = {
     .open = location_open,
     .fd.close = location_close,
-    .fd.read = location_read,
+    .fd.read = location_read
 };

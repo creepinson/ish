@@ -32,10 +32,9 @@
 
 @end
 
-@interface AudioPlayer : NSObject {
-    @public AVAudioPlayer *player;
-    @public NSMutableData *playerData;
-}
+@interface AudioPlayer : NSObject
+@property(strong, readwrite) NSMutableData *playerData;
+@property(strong, readwrite) AVAudioPlayer *player;
 @property lock_t lock;
 @property cond_t updateCond;
 - (int)waitForUpdate;

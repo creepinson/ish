@@ -160,7 +160,7 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
 }
 
 @implementation AudioPlayer + (AudioPlayer *)instance {
-    static __weak AudioPlayer *tracker;
+    static AudioPlayer *tracker;
     if (tracker == nil) {
         __block AudioPlayer *newTracker;
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -175,20 +175,20 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
 }
 
 - (void) play {
-
-    NSError *error = nil;
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error: nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:&error];
     
-    self->player.volume = 1.0;
-    [self->player stop]; //to play
-    [self->player play]; //to play
-    NSLog(@"audio player state: %s", [self->player isPlaying] ? "true" : "false");
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+        
+    if (self.player.playing) {
+        [self.player stop];
+    }
+    [self.player play]; //to play
+    NSLog(@"audio player state: %s", [self.player isPlaying] ? "true" : "false");
 }
 
 - (void)dealloc {
-    self->playerData = nil;
-    
+    self.playerData = nil;
+    self.player = nil;
+    [[AVAudioSession sharedInstance] setActive:NO error:nil];
     cond_destroy(&_updateCond);
 }
 
@@ -200,6 +200,7 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
 }
 
 @end
+
 
 
 @interface AudioFile : NSObject {
@@ -253,10 +254,11 @@ static ssize_t audio_sine_write(struct fd *fd, void *buf, size_t size) {
 
 - (void) onClose {
     self->streamClosed = YES;
-    self.audioPlayer->playerData = [NSMutableData dataWithData:buffer];
-    self.audioPlayer->playerData = generateAudioWithHeaders(self.audioPlayer->playerData);
+    self.audioPlayer.playerData = [NSMutableData dataWithData:buffer];
+    
+    //self.audioPlayer.playerData = generateAudioWithHeaders(self.audioPlayer.playerData);
     NSError *error1;
-    self.audioPlayer->player = [[AVAudioPlayer alloc] initWithData:self.audioPlayer->playerData fileTypeHint:@"wav" error:&error1];
+    self.audioPlayer.player = [[AVAudioPlayer alloc] initWithData:self.audioPlayer.playerData fileTypeHint:@"wav" error:&error1];
     if(error1) {
         NSLog(@"audio error: %@", error1);
     }
@@ -312,5 +314,5 @@ struct dev_ops audio_dev = {
     .open = audio_open,
     .fd.close = audio_close,
     .fd.read = audio_read,
-    .fd.write = audio_write
+    .fd.write = audio_write,
 };
